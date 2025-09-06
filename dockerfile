@@ -1,0 +1,7 @@
+# Sử dụng image K6 chính thức
+FROM grafana/k6:latest
+
+# Đặt thư mục làm việc bên trong container
+WORKDIR /test
+COPY . /test
+ENTRYPOINT ["k6", "run", "ddos2.js"]
